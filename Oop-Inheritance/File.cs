@@ -29,6 +29,11 @@ namespace Oop_Inheritance
         {
 			Console.WriteLine($"Copying file '{this.Name}.{this.Extension}' to '{toDestinationPath};");
 		}
+
+		public static void GetRootFolder()
+        {
+			Console.WriteLine($@"Root foder is 'C:\'");
+		}
 	}
 
 
