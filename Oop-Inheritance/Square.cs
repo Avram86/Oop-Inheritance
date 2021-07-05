@@ -9,16 +9,42 @@ namespace Oop_Inheritance
     public class Square : Shape
     {
         public Square(Point topLeft, int width, int height)
+        : base(new Point[]
+            {
+                topLeft, 
+                new Point(topLeft.X + width, topLeft.Y),
+                new Point(topLeft.X+width, topLeft.Y + height),
+                new Point(topLeft.X, topLeft.Y + height)
+            })
         {
-            TopLeft = topLeft;
-            TopRight = new Point(TopLeft.X + width, TopLeft.Y);
-            BottomRight = new Point(TopRight.X, TopLeft.Y + height);
-            BottomLeft = new Point(TopLeft.X, TopLeft.Y + height);
         }
-        public Point TopLeft { get; }
-        public Point TopRight { get; }
-        public Point BottomLeft { get; }
-        public Point BottomRight { get; }
+        public Point TopLeft {
+            get { 
+                return Points[0];
+            }
+        }
+        public Point TopRight
+        {
+            get
+            {
+                return Points[1];
+            }
+        }
+        public Point BottomRight
+        {
+            get
+            {
+                return Points[2];
+            }
+        }
+        public Point BottomLeft
+        {
+            get
+            {
+                return Points[3];
+            }
+        }
+       
 
 
 
@@ -34,7 +60,7 @@ namespace Oop_Inheritance
             }
         }
 
-        public override void Rotate(double angleDegrees)
+        public  void Rotate(double angleDegrees)
         {
             TopLeft.ApplyRotationTransform(angleDegrees);
             TopRight.ApplyRotationTransform(angleDegrees);
