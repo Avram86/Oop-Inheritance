@@ -24,14 +24,18 @@ namespace Oop_Inheritance
             //         File.GetRootFolder();
 
             Shape t = new Triangle(new Point(15, 15), new Point(23, 30), new Point(50, 25));
-            Console.WriteLine($"Area: {t.Area}");
-            t.Rotate(45);
-            Console.WriteLine($"Area: {t.Area}");
+            RotateAndPrintAShape(t);
 
             Shape r = new Square(new Point(10, 10), 20, 10);
-            Console.WriteLine($"Area: {r.Area}");
-            r.Rotate(45);
-            Console.WriteLine($"Area: {r.Area}");
+            RotateAndPrintAShape(r);
         }
+
+        public static void RotateAndPrintAShape(Shape s)
+        {
+            Console.WriteLine($"{s.Name} Area {s.Area}");
+            s.Rotate(45);
+            Console.WriteLine($"{s.Name} Area after rotation {s.Area}");
+        }
+
     }
 }

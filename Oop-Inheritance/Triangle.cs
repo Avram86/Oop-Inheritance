@@ -16,6 +16,7 @@ namespace Oop_Inheritance
         public Point P2 { get { return Points[1]; } }
         public Point P3 { get { return Points[2]; } }
 
+        public override string Name { get { return "Rectangle"; } }
         public override double Area 
         {
             get
@@ -24,6 +25,13 @@ namespace Oop_Inheritance
                 double area = Math.Abs(this.P1.X * (this.P2.Y - this.P3.Y) + this.P2.X * (this.P3.Y - this.P1.Y) + this.P3.X * (this.P1.Y - this.P2.Y)) / 2;
                 return Math.Round(area, 2);
             }
+        }
+
+        public override void Rotate(double angleDegrees)
+        {
+            Console.WriteLine("Preparing to rotate a triangle....");
+            base.Rotate(angleDegrees);
+            Console.WriteLine("Finished rotating a triangle....");
         }
     }
 }

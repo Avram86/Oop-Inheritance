@@ -13,12 +13,15 @@ namespace Oop_Inheritance
             this.Points = points ?? new Point[0];
         }
 
+        public abstract string Name { get; }
         public Point[] Points { get; }
 
         public abstract double Area { get; }
 
-        public void Rotate(double angleDegrees)
+        public virtual void Rotate(double angleDegrees)
         {
+            Console.WriteLine($"Rotating base shape with {angleDegrees} degrees");
+
             foreach(var point in Points)
             {
                 point.ApplyRotationTransform(angleDegrees);

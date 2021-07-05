@@ -44,9 +44,9 @@ namespace Oop_Inheritance
                 return Points[3];
             }
         }
-       
 
 
+        public override string Name { get { return "Triangle"; } }
 
         public override double Area {
             get 
@@ -60,7 +60,7 @@ namespace Oop_Inheritance
             }
         }
 
-        public  void Rotate(double angleDegrees)
+        public override void Rotate(double angleDegrees)
         {
             TopLeft.ApplyRotationTransform(angleDegrees);
             TopRight.ApplyRotationTransform(angleDegrees);
