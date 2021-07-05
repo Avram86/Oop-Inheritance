@@ -23,11 +23,21 @@ namespace Oop_Inheritance
 
             //         File.GetRootFolder();
 
+            /*
             Shape t = new Triangle(new Point(15, 15), new Point(23, 30), new Point(50, 25));
             RotateAndPrintAShape(t);
 
             Shape r = new Square(new Point(10, 10), 20, 10);
             RotateAndPrintAShape(r);
+            */
+
+            A a=new A();
+            //a.DoSomething();
+            DoSmthWithObj(a);
+
+            B b = new B();
+            //b.DoSomething();
+            DoSmthWithObj(b);
         }
 
         public static void RotateAndPrintAShape(Shape s)
@@ -37,5 +47,24 @@ namespace Oop_Inheritance
             Console.WriteLine($"{s.Name} Area after rotation {s.Area}");
         }
 
+        public static void DoSmthWithObj(A obj)
+        {
+            obj.DoSomething();
+        }
+        
+    }
+    public class A
+    {
+        public void DoSomething()
+        {
+            Console.WriteLine("Class A");
+        }
+    }
+    public class B : A
+    {
+        public new void DoSomething()
+        {
+            Console.WriteLine("Class B");
+        }
     }
 }
